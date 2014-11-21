@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="opaleEval_to_hdoc.xsl"?>
+
+<sc:item xmlns:sc="http://www.utc.fr/ics/scenari/v3/core">
+	<op:assmntUa xmlns:sp="http://www.utc.fr/ics/scenari/v3/primitive" xmlns:op="utc.fr:ics/opale3">
+		<op:uM>
+			<sp:title>Autoevaluation Title</sp:title>
+			<sp:sTitle>Autoevaluation Subtitle</sp:sTitle>
+		</op:uM>
+		<sp:obj>
+			<op:sTxt>
+				<sc:para xml:space="preserve">The purpose of this autoevaluation is...</sc:para>
+			</op:sTxt>
+		</sp:obj>
+		<sp:intro>
+			<op:res>
+				<sp:txt>
+					<op:txt>
+						<sc:para xml:space="preserve">This is an introduction (type text)</sc:para>
+					</op:txt>
+				</sp:txt>
+			</op:res>
+		</sp:intro>
+		<sp:quiz>
+			<op:mcqMur>
+				<op:exeM>
+					<sp:title>QCM Title</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Question</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:choices>
+					<sc:choice solution="checked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Response 1</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice solution="checked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Response 2</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice solution="unchecked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Response 3</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice solution="unchecked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Response 4</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+				</sc:choices>
+				<sc:globalExplanation>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">QCM Global Explication</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:globalExplanation>
+			</op:mcqMur>
+		</sp:quiz>
+		<sp:quiz>
+			<op:mcqSur>
+				<op:exeM>
+					<sp:title>QCU Title</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Question</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:choices>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Response 1</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Explication 1</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Response 2</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Response 3</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+				</sc:choices>
+				<sc:solution choice="1"/>
+				<sc:globalExplanation>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">QCU Global explication</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:globalExplanation>
+			</op:mcqSur>
+		</sp:quiz>
+		<sp:quiz>
+			<op:cloze>
+				<op:exeM>
+					<sp:title>Title Text in Sections</sp:title>
+				</op:exeM>
+				<sc:gapText>
+					<op:clozeTxt>
+						<sc:para xml:space="preserve">This is a <sc:textLeaf role="gap">simple</sc:textLeaf> example.</sc:para>
+					</op:clozeTxt>
+				</sc:gapText>
+			</op:cloze>
+		</sp:quiz>
+	</op:assmntUa>
+</sc:item>

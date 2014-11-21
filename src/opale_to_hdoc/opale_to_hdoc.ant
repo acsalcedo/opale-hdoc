@@ -1,0 +1,106 @@
+<project name="ProjetOpale" default="convert">
+	
+	<!-- Arguments properties -->
+	<property name="InputPath" 			value="source.scar" />
+	<property name="OutputPath" 		value="result.hdoc" />
+	
+	<!-- Other properties -->
+	<property name="UnzipSourcePath" 	value="UnzipSourcePath" />
+	<property name="XmlModuleName" 		value="" />
+	<property name="TmpPath" 			value="TmpPath" />
+	<property name="TmpFile1" 			value="TmpFile1.xml" />
+	<property name="RacineFile" 		value="content.xml" />
+	<property name="HdocPath" 			value="hdoc" />
+	
+	<!-- Others properties (in another file) currently empty -->
+	<property file="opale_to_hdoc.properties" />
+
+	<!-- Beginning -->
+	<target name="convert">
+		<antcall target="clean" />
+		<antcall target="unzip_scar" />	  	
+		<antcall target="check_source_xml" />
+		<antcall target="hdoc_structure" />
+		<antcall target="fusion_xml" />
+		<antcall target="content_xml" />
+		<antcall target="zip" />
+	</target>
+		
+	<!-- Clean : delete old files -->
+	<target name="clean">
+		<!-- create folders (to be sure) -->
+		<mkdir dir="${UnzipSourcePath}"/>
+		<mkdir dir="${TmpPath}"/>
+		<mkdir dir="${HdocPath}"/>
+		<!-- delete folders -->
+		<delete dir="${UnzipSourcePath}"/>
+		<delete dir="${TmpPath}"/>
+		<delete dir="${HdocPath}"/>
+	</target>
+	
+	<!-- Check if only one xml file -->
+	<target name="check_source_xml">
+		
+		<!-- count xml files -->
+		<resourcecount property="xml.count">
+			<fileset dir="${UnzipSourcePath}" casesensitive="yes">
+				<include name="*.xml"/>
+			</fileset>
+		</resourcecount>
+		
+		<!-- check if only one xml file -->
+		<condition  property="xml.onlyone">
+			<equals arg1="${xml.count}" arg2="1"/>
+		</condition>
+		
+		<!-- fail if more than one -->
+		<fail message="Error : too many source file (${xml.count}), source file not found or unreadable." unless="xml.onlyone"/>
+
+	</target>
+	
+	<!-- Unzip scar source file -->
+	<target name="unzip_scar">
+		<unzip src="${InputPath}" dest="./${UnzipSourcePath}"/>
+	</target>
+	
+	<!-- Create the hdoc structure -->
+	<target name="hdoc_structure">
+		<mkdir dir="${HdocPath}"/>
+		<mkdir dir="${HdocPath}/META-INF" />
+		<touch file="${HdocPath}/META-INF/container.xml" />
+		<touch file="${HdocPath}/mimetype" />
+		<echo message="application/x-hdoc+zip" file="${HdocPath}/mimetype" />
+		<echoxml file="${HdocPath}/META-INF/container.xml">
+			<container version="1.0">
+				<rootfiles>
+					<rootfile full-path="${HdocPath}/${RacineFile}" media-type="text/xml" />
+				</rootfiles>
+			</container>
+		</echoxml>
+	</target>
+
+	<!-- Make a unique xml source file -->
+	<target name="fusion_xml">
+		
+		<!-- get xml source file path -->
+		<fileset id="fileset_source_xml" dir="${UnzipSourcePath}" casesensitive="yes">
+			<include name="*.xml"/>
+		</fileset>
+		<pathconvert property="xml.path" pathsep="" refid="fileset_source_xml" />
+		
+		<!-- xsl -->
+		<xslt style="opale_to_hdoc_regle1.xsl" in="${xml.path}" out="./${TmpPath}/${TmpFile1}">
+		</xslt>
+		
+	</target>
+	
+	<!-- Create content.xml -->
+	<target name="content_xml">	
+		<xslt style="opale_to_hdoc_regle2.xsl" in="./${TmpPath}/${TmpFile1}" out="./${HdocPath}/${RacineFile}" />
+	</target>
+	
+	<!-- Zip Hdoc -->
+	<target name="zip">
+		<zip destfile="${OutputPath}" basedir="${HdocPath}"/>
+	</target>
+</project> 
