@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../opaleEval_to_hdoc/opaleEval_to_hdoc.xsl"?>
+
+<sc:item xmlns:sc="http://www.utc.fr/ics/scenari/v3/core">
+	<op:assmntUa xmlns:sp="http://www.utc.fr/ics/scenari/v3/primitive" xmlns:op="utc.fr:ics/opale3">
+		<op:uM>
+			<sp:title>Example of fill in the blank exercise</sp:title>
+			<sp:info>
+				<op:info>
+					<sp:keywds>
+						<op:keywds>
+							<sp:keywd>Keyword 1</sp:keywd>
+							<sp:keywd>Keyword 2</sp:keywd>
+						</op:keywds>
+					</sp:keywds>
+					<sp:cc>publicdomain</sp:cc>
+					<sp:cpyrgt>
+						<op:sPara>
+							<sc:para xml:space="preserve">Copyright</sc:para>
+						</op:sPara>
+					</sp:cpyrgt>
+				</op:info>
+			</sp:info>
+		</op:uM>
+		<sp:quiz>
+			<op:cloze>
+				<op:exeM/>
+				<sc:gapText>
+					<op:clozeTxt>
+						<sc:para xml:space="preserve">This</sc:para>
+						<sc:para xml:space="preserve">is</sc:para>
+						<sc:para xml:space="preserve">an</sc:para>
+						<sc:para xml:space="preserve"><sc:textLeaf role="gap">example</sc:textLeaf></sc:para>
+						<sc:para xml:space="preserve">of</sc:para>
+						<sc:para xml:space="preserve">fill</sc:para>
+						<sc:para xml:space="preserve"><sc:textLeaf role="gap">in</sc:textLeaf> </sc:para>
+						<sc:para xml:space="preserve">the</sc:para>
+						<sc:para xml:space="preserve"><sc:textLeaf role="gap">blank</sc:textLeaf></sc:para>
+					</op:clozeTxt>
+				</sc:gapText>
+			</op:cloze>
+		</sp:quiz>
+	</op:assmntUa>
+</sc:item>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="../opaleEval_to_hdoc/opaleEval_to_hdoc.xsl"?>
+
+<sc:item xmlns:sc="http://www.utc.fr/ics/scenari/v3/core">
+	<op:assmntUa xmlns:sp="http://www.utc.fr/ics/scenari/v3/primitive" xmlns:op="utc.fr:ics/opale3">
+		<op:uM>
+			<sp:title>Questionnaire</sp:title>
+		</op:uM>
+		<sp:quiz>
+			<op:mcqSur>
+				<op:exeM>
+					<sp:title>Uses of Information</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">What is information-as-thing ?</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:choices>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">The knowledge communicated, perceived or gained in information-as-process.</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">The knowledge gained in information-as-process is considered information-as-knowledge.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">The act of informing or being informed.</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">The act of informing is called information-as-process.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">The objects used to provide information. </sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">Objects that are considered informative are information-as-thing.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+				</sc:choices>
+				<sc:solution choice="3"/>
+			</op:mcqSur>
+		</sp:quiz>
+		<sp:quiz>
+			<op:mcqMur>
+				<op:exeM>
+					<sp:title>Tangibility</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">What uses of information are considered intangible ? </sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:choices>
+					<sc:choice solution="checked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-knowledge</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-knowledge is intangible because it is not possible to measure a person's knowledge without them communicating it in a physical way.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+					<sc:choice solution="unchecked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-thing</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-thing is tangible because it can be manipulated directly.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+					<sc:choice solution="checked">
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-process</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+						<sc:choiceExplanation>
+							<op:txt>
+								<sc:para xml:space="preserve">Information-as-process is intangible because it is the act of informing or being informed, it cannot be measured.</sc:para>
+							</op:txt>
+						</sc:choiceExplanation>
+					</sc:choice>
+				</sc:choices>
+			</op:mcqMur>
+		</sp:quiz>
+		<sp:quiz>
+			<op:cloze>
+				<op:exeM>
+					<sp:title>Evidence</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">Fill in the following sentence with the correct word.</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:gapText>
+					<op:clozeTxt>
+						<sc:para xml:space="preserve">A key characteristic of evidence is that it is <sc:textLeaf role="gap">passive</sc:textLeaf>, only humans can use it or manipulate it. </sc:para>
+					</op:clozeTxt>
+				</sc:gapText>
+				<sc:globalExplanation>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">Evidence is passive because humans can understand, misunderstand, interpret, examine, describe or manipulate it but by itself, it does not do anything actively. </sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:globalExplanation>
+			</op:cloze>
+		</sp:quiz>
+		<sp:quiz>
+			<op:mcqSur>
+				<op:exeM>
+					<sp:title>Types of Information</sp:title>
+				</op:exeM>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">Which of the following are <sc:inlineStyle role="emp">not</sc:inlineStyle> considered types of information ?</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:choices>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Data, texts and documents</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Objects</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">Events</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+					<sc:choice>
+						<sc:choiceLabel>
+							<op:txt>
+								<sc:para xml:space="preserve">None of the above</sc:para>
+							</op:txt>
+						</sc:choiceLabel>
+					</sc:choice>
+				</sc:choices>
+				<sc:solution choice="4"/>
+				<sc:globalExplanation>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">All are considered types of information because data, texts, documents, objects and events can all be informative.</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:globalExplanation>
+			</op:mcqSur>
+		</sp:quiz>
+		<sp:quiz>
+			<op:cloze>
+				<op:exeM/>
+				<sc:question>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">Fill in the following sentence with the correct word.</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:question>
+				<sc:gapText>
+					<op:clozeTxt>
+						<sc:para xml:space="preserve">Buckland states that information is <sc:textLeaf role="gap">situational</sc:textLeaf> because a person can determine if it informative or not (subjective). </sc:para>
+					</op:clozeTxt>
+				</sc:gapText>
+				<sc:globalExplanation>
+					<op:res>
+						<sp:txt>
+							<op:txt>
+								<sc:para xml:space="preserve">It is situational because it depends on the circumstances and its relevance to the user of the information.</sc:para>
+							</op:txt>
+						</sp:txt>
+					</op:res>
+				</sc:globalExplanation>
+			</op:cloze>
+		</sp:quiz>
+		<sp:quiz>
+			<op:cloze>
+				<op:exeM/>
+				<sc:gapText>
+					<op:clozeTxt>
+						<sc:para xml:space="preserve">Information by <sc:textLeaf role="gap">consensus</sc:textLeaf>: when something is considered informative because a large group of individuals agree that it is.</sc:para>
+					</op:clozeTxt>
+				</sc:gapText>
+			</op:cloze>
+		</sp:quiz>
+	</op:assmntUa>
+</sc:item>
