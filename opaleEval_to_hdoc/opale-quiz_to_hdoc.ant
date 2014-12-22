@@ -1,0 +1,80 @@
+<project basedir="." name="opale2hdoc" default="convert">
+    
+    <property file="opale-quiz_to_hdoc.properties"/>
+    
+    <target name="convert">
+        <antcall target="unzip"/>
+        <antcall target="checkNumFiles"/>
+        <antcall target="hdocStructure"/>
+        <antcall target="combineFiles"/>
+        <antcall target="content_xml"/>
+        <antcall target="zip"/>
+    </target>
+    
+    <!-- Clean : delete old files -->
+    <target name="clean">
+        <!-- create folders (to be sure) -->
+        <mkdir dir="${UnzippedDirectory}"/>
+        <mkdir dir="${TmpPath}"/>
+        <mkdir dir="${HdocPath}"/>
+        <!-- delete folders -->
+        <delete dir="${UnzippedDirectory}"/>
+        <delete dir="${TmpPath}"/>
+        <delete dir="${HdocPath}"/>
+    </target>
+    
+    <!-- Unzip scar file -->
+    <target name="unzip">
+        <unzip src="${InputPath}" dest="${UnzippedDirectory}"/>
+    </target>
+    
+    <target name="checkNumFiles">
+        
+        <resourcecount property="xml.count">
+            <fileset dir="${UnzippedDirectory}" casesensitive="yes">
+                <include name="*.xml"/>
+            </fileset>
+        </resourcecount>
+    </target>
+    
+    
+    <!-- Create the hdoc structure -->
+    <target name="hdocStructure">
+        <mkdir dir="${HdocPath}"/>
+        <mkdir dir="${HdocPath}/META-INF" />
+        <touch file="${HdocPath}/META-INF/container.xml" />
+        <touch file="${HdocPath}/mimetype" />
+        <echo message="application/x-hdoc+zip" file="${HdocPath}/mimetype" />
+        <echoxml file="${HdocPath}/META-INF/container.xml">
+            <container version="1.0">
+                <rootfiles>
+                    <rootfile full-path="${HdocPath}/${BaseFile}" media-type="text/xml" />
+                </rootfiles>
+            </container>
+        </echoxml>
+    </target>
+    
+    <target name="combineFiles">
+        
+        <!-- get xml source file path -->
+        <fileset id="fileset_source_xml" dir="${UnzippedDirectory}" casesensitive="yes">
+            <include name="*.xml"/>
+        </fileset>
+        <pathconvert property="xml.path" pathsep="" refid="fileset_source_xml" />
+        
+        <!-- xsl -->
+        <xslt style="opaleEval_to_hdoc_copy.xsl" in="${xml.path}" out="./${TmpPath}/${TmpFile1}">
+        </xslt>
+        
+    </target>
+    
+    <!-- Create content.xml -->
+    <target name="content_xml">	
+        <xslt style="opaleEval_to_hdoc.xsl" in="./${TmpPath}/${TmpFile1}" out="./${HdocPath}/${BaseFile}" />
+    </target>
+    
+    <target name="zip">
+        <zip destfile="${OutputPath}" basedir="${HdocPath}"/>
+    </target>
+    
+</project>
